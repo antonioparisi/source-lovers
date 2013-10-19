@@ -37,7 +37,7 @@ nav ul li {
 }
 
 section.mainsection {
-  height: 30em;
+  height: 25em;
   background-image: url('tile.jpg');
 }
 
@@ -49,9 +49,22 @@ section.mainsection {
 }
 
 .intro-wrapper {
-  padding-top: 5em;
+  padding-top: 4em;
 }
 
 .subintro {
   font-size: 2em;
+  background-image: url('tile.jpg');
+}
+
+section.secondsection {
+  background-image: url('bg.jpg');
+}
+
+h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
+  color: white;
+}
+
+.last-step {
+  margin-bottom: 4em; 
 }
