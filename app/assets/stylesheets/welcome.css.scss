@@ -4,7 +4,8 @@
 $bg: #444444;
 $border: #111111;
 $text: white;
-
+$grey: #CCCCCC;
+$dark: #6F6F6F;
 
 a {
   text-decoration: none;
@@ -61,7 +62,7 @@ h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
 }
 
 .mainsection {
-  h1, h5 {
+  h1, h5, h3 {
     color: #333333;
   }
 }
@@ -81,6 +82,14 @@ footer {
 .img {
   margin: 0 auto;
   z-index: 1;
+  border-top: 1px solid hsl(0%, 0%, 93%);
+  border-right: 1px solid hsl(0%, 0%, 93%);
+  border-left: 1px solid hsl(0%, 0%, 93%);
+  border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.main_img {
+  border-radius: 5px;
 }
 
 .step {
@@ -88,17 +97,40 @@ footer {
 }
 
 .thirdsection {
-  border-top: 1px solid black;
   padding-top: 4em;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #333333;
+  background-color: hsl(0%, 0%, 93%);
+  padding-bottom: 3em;
 }
 
 .description {
   font-size: 1.3em;
+  line-height: 1.3em;
+  padding-top: 0.2em;
 }
 
 .image {
+  width: 55%;
+  margin: 0 auto;
+  display: block;
+}
 
+.search1 {
+  margin-top: 1.7em !important;
+  height: 3em !important;
+}
+
+input.search1 {
+  border-radius: 0.5em 0em 0em 0.5em;
+}
+
+button.search1 {
+  border-radius: 0em 0.5em 0.5em 0em;
+  box-shadow: none;
+}
+
+.search-section {
+  margin-top: 3em;
 }
