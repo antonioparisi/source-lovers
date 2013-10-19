@@ -10,9 +10,15 @@ describe Project do
   describe '.search' do
     before do
       @cool = create(:project, :name => 'cool', :description => 'a cool project', :languages => 'ruby', :author => 'good fellow')
-      @oldish = create(:project, :name => 'camel', :description => 'just an old regexp project', :languages => 'perl', :author => 'anonymous@example.com')
+      @oldish = create(:project, :name => 'oldish camel', :description => 'just an regexp project', :languages => 'perl', :author => 'anonymous@example.com')
       @old_and_good = create(:project, :name =>'old and good', :description => 'only for real men', :languages => 'C', :author => 'hacker@example.com')
       @parallel = create(:project, :name => 'parallel', :description => 'we love concurrency and parallel things for good!', :languages => 'erlang', :author => 'master@example.com')
+      @yahoo = create(:project, :name => 'Yahoo!')
+      @yohoo = create(:project, :description => 'Yohoo!')
+      @four = create(:project, :name => 'four')
+      @far = create(:project, :name => 'far')
+      @fur = create(:project, :description => 'fur')
+      @five = create(:project, :name => 'five')
     end
 
     context 'when searching for old' do
@@ -44,6 +50,30 @@ describe Project do
 
       it 'finds the parallel project' do
         Project.search('good').should include(@parallel)
+      end
+    end
+
+    context 'when searching for Yahoo' do
+      it 'finds two projects' do
+        Project.search('Yahoo').count == 2
+      end
+
+      it 'finds Yahoo and Yohoo' do
+        [@yahoo, @yohoo].each do |proj|
+          Project.search('Yahoo').should include(proj)
+        end
+      end
+    end
+
+    context 'when searching for fir' do
+      it 'finds three projects' do
+        Project.search('fir').count == 3
+      end
+
+      it 'finds four, far, fur' do
+       [@four, @far, @fur].each do |proj|
+         Project.search('fir').should include(proj)
+       end
       end
     end
   end
