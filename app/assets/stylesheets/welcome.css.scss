@@ -36,18 +36,22 @@ nav ul li {
   padding-left: 0.8em;
 }
 
-section {
-  height: 34em;
+section.mainsection {
+  height: 30em;
   background-image: url('tile.jpg');
 }
 
 .intro {
-  font-size: 2.5em;
+  font-size: 3em;
   color: #333333;
-  line-height: 1em;
+  line-height: 1.5em;
   text-transform: uppercase;
 }
 
 .intro-wrapper {
   padding-top: 5em;
+}
+
+.subintro {
+  font-size: 2em;
 }
