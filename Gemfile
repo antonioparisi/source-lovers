@@ -15,8 +15,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'pg'
 gem 'octokit', '~> 2.0'
 gem 'sidekiq'
-gem 'activerecord-postgres-hstore'
 gem 'pg_search'
+gem 'kaminari'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
