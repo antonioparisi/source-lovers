@@ -15,39 +15,19 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <header>
-      <div class="row collapse">
-        <div class="large-12 small-12 medium-5 columns">
-          <div class="row collapse">
-            <div class="large-11 medium-11 small-12 large-centered small-centered medium-centered columns">
-              <div class="row collapse">
-                <div class="large-5 medium-4 small-3 columns">
-                  <h1 class="logo">SourceLovers</h1>
-                </div>
-                <div class="large-7 medium-8 small-9 columns">
-                  <nav>
-                    <ul class="roboto-thin">
-                      <li>Projects</li>
-                      <li>About</li>
-                      <li>Help</li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
     <%= yield %>
+
+    <footer class="roboto-thin">
+      Hackatron
+    </footer>
 
     <%= javascript_include_tag "application" %>
   </body>

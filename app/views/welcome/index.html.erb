@@ -1,21 +1,66 @@
 <section class="mainsection">
   <div class="row collapse intro-wrapper">
     <div class="large-12 medium-12 small-12 columns">
-      <div class="row collapse">
-        <div class="large-10 medium-11 small-12 large-centered small-centered medium-centerted columns">
-          <p class="intro roboto-thin">
-            The hacker way to fund raising.
-            <br />
-          <p>
-          <p class="subintro roboto-thin">
-            The easiest way to build a donation page for you project.
-          </p>
-        </div>
+      <h1 class="roboto-thin">We are <strong><a href="#">Source Lovers</a></strong></h1>
+      <p class="subintro roboto-thin">
+        And we'd like to help you building donation pages for your open source projects.
+        <strong>Fund raising the hacker way.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="row collapse">
+    <div class="large-12 small-12 medium-12 columns">
+      <div class="img">
+          <%= image_tag 'git.png' %>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  
+
+<section class="mainsection thirdsection">
+  <div class="row collapse">
+    <div class="large-12 medium-12 small-12 columns">
+      <div class="row collapse">
+        <div class="large-8 small-8 medium-8 columns description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, odio, eveniet doloremque commodi itaque necessitatibus numquam sequi fuga deleniti vero minima sapiente enim! Laboriosam, inventore delectus veniam rem odit alias?
+        </div>
+        <div class="large-4 small-4 medium-4 columns image">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="large-12 medium-12 small-12 columns">
+      <h1 class="roboto-thin"> Show your love for open source. </h1>
+      <input type="search" placeholder="Redis" />
+      <h5 class="roboto-thin black-title"> Discover a project and support it. </h5>
+    </div>
+  </div>
+</section>
+
+<section class="secondsection">
+  <div class="row collapse">
+    <div class="large-12 medium-12 small-12 columns intro-wrapper">
+        <h1 class="roboto-thin"> How it works </h1>
+        <section class="step">
+          <h3 class="roboto-thin">Step 1: set up the webhook</h3>
+          <div class="highlight"><pre>http://sourcelove.rs/hooks/github</pre></div>
+
+          <h5 class="roboto-thin">Using this webhook we will get updates from your repo.</h5>
+        </section>
+        <section class="step">
+          <h3 class="roboto-thin"> Step 2: create a manifest with your project info</h3>
+
+          <%= render 'manifest' %>
+
+          <h5 class="roboto-thin"> Create a JSON manifest file and push it into your repo. This file should follow the Source Lovers manifest specification, more details at <a href="http://sourcelove.rs/documentation/manifest">http://sourcelove.rs/documentation/manifest</a></h5>
+        </section>
+        <section class="step">
+          <h3 class="roboto-thin"> Step 3:</h3>
+          <h5 class="roboto-thin last-step"> Push you code and start getting support!</h5>
+        </section>
+    </div>
+  </div>
 </section>
