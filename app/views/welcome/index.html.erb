@@ -1,4 +1,4 @@
-<section class="mainsection">
+<section class="mainsection first">
   <div class="row collapse intro-wrapper">
     <div class="large-12 medium-12 small-12 columns">
       <h1 class="roboto-thin">We are <strong><a href="#">Source Lovers</a></strong></h1>
@@ -11,9 +11,7 @@
 
   <div class="row collapse">
     <div class="large-12 small-12 medium-12 columns">
-      <div class="img">
-          <%= image_tag 'git.png' %>
-      </div>
+      <%= image_tag 'git.png', :class => "img" %>
     </div>
   </div>
 </section>
@@ -24,18 +22,33 @@
     <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
         <div class="large-8 small-8 medium-8 columns description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, odio, eveniet doloremque commodi itaque necessitatibus numquam sequi fuga deleniti vero minima sapiente enim! Laboriosam, inventore delectus veniam rem odit alias?
+        
+        Mantainers of open source projects are often annoyed by bad comments and flames.
+        It's time to change this and make them happy and proud for the hard work they do for all of us.
+        <br >
+        Don't let them to burn out, take the chance to show some love to your favourite open soruce project!
         </div>
         <div class="large-4 small-4 medium-4 columns image">
+          <%= image_tag 'code.svg', :class => "image" %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row collapse">
-    <div class="large-12 medium-12 small-12 columns">
-      <h1 class="roboto-thin"> Show your love for open source. </h1>
-      <input type="search" placeholder="Redis" />
-      <h5 class="roboto-thin black-title"> Discover a project and support it. </h5>
+  <div class="row collapse search-section">
+    <div class="large-12 medium-12 small-12 columns"> 
+      <div class="row collapse">
+        <div class="large-5 medium-5 small-5 columns">
+          <h1 class="roboto-thin"> Show your love for </h1>
+        </div>
+        <%= form_for :projects, :url => projects_path, :method => "GET" do |f| %>
+          <div class="small-6 large-6 medium-6 columns">
+            <%= f.text_field :q, :class => "search-pj", :placeholder => "Redis" %>
+          </div>
+          <div class="small-1 large-1 medium-1 columns">
+            <%= f.submit "❤", :class => "button prefix search-pj" %>
+          </div>
+        <% end %> 
+      </div>
     </div>
   </div>
 </section>
@@ -46,9 +59,8 @@
         <h1 class="roboto-thin"> How it works </h1>
         <section class="step">
           <h3 class="roboto-thin">Step 1: set up the webhook</h3>
-          <div class="highlight"><pre>http://sourcelove.rs/hooks/github</pre></div>
-
-          <h5 class="roboto-thin">Using this webhook we will get updates from your repo.</h5>
+          <div class="highlight"><pre>http://sourcelovers.r13.railsrumble.com/hooks/github</pre></div>
+          <h5 class="roboto-thin">Using this webhook we will get updates from your repo. You should insert into Settings>Service Hooks> WebHook URLs in your Github repo</h5>
         </section>
         <section class="step">
           <h3 class="roboto-thin"> Step 2: create a manifest with your project info</h3>
