@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20131019083148) do
     t.string   "name"
     t.text     "description"
     t.string   "version"
+    t.text     "contributors"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -90,3 +90,21 @@ deploy.task :restart, :roles => :app do
   # Restart Application
   run "touch #{current_path}/tmp/restart.txt"
 end
+
+after 'deploy:start', 'sidekiq:start'
+after 'deploy:stop', 'sidekiq:stop'
+after 'deploy:restart', 'sidekiq:restart'
+
+namespace :sidekiq do
+  task :stop do
+    run 'stop sidekiq index=0'
+  end
+
+  task :start do
+    run 'start sidekiq index=0'
+  end
+
+  task :restart do
+    run 'restart sidekiq index=0'
+  end
+end
