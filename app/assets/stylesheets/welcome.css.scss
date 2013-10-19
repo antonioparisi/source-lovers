@@ -1,3 +1,53 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$logo: #eb6156;
+$bg: #444444;
+$border: #111111;
+$text: white;
+
+html {
+  background-image: url('bg.jpg');
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  color: $logo;
+  text-shadow: -1px -1px #222;
+}
+
+header {
+  box-shadow: 1px 10px 10px #333333;
+  background-image: url('bg.jpg');
+  z-index: 300;
+}
+
+.roboto-thin {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+nav ul li {
+  font-size: 1.5em;
+  list-style-type: none;
+  color: $text;
+  float: right;
+  padding: 0.5em;
+  padding-left: 0.8em;
+}
+
+section {
+  height: 34em;
+  background-image: url('tile.jpg');
+}
+
+.intro {
+  font-size: 2.5em;
+  color: #333333;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.intro-wrapper {
+  padding-top: 5em;
+}
