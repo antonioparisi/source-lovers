@@ -117,16 +117,16 @@ footer {
   display: block;
 }
 
-.search1 {
+.search-pj {
   margin-top: 1.7em !important;
   height: 3em !important;
 }
 
-input.search1 {
+input.search-pj {
   border-radius: 0.5em 0em 0em 0.5em;
 }
 
-button.search1 {
+input[type=submit].search-pj {
   border-radius: 0em 0.5em 0.5em 0em;
   box-shadow: none;
 }
