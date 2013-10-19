@@ -1,47 +1,47 @@
 <section class="mainsection">
   <div class="row collapse intro-wrapper">
     <div class="large-12 medium-12 small-12 columns">
-      <div class="row collapse">
-        <div class="large-10 medium-11 small-12 large-centered small-centered medium-centerted columns">
-          <p class="intro roboto-thin">
-            The hacker way to fund raising.
-            <br />
-          <p>
+          <h1 class="roboto-thin">We are <strong><a href="#">Source Lovers</a></strong></h1>
           <p class="subintro roboto-thin">
             The easiest way to build a donation page for you project.
           </p>
-        </div>
+    </div>
+  </div>
+
+  <div class="row collapse">
+    <div class="large-12 small-12 medium-12 columns">
+      <div class="img">
+          <%= image_tag 'git.png' %>
       </div>
     </div>
   </div>
+
 </section>
 
 <section class="secondsection">
   <div class="row collapse">
-    <div class="large-12 medium-12 small-12 columns">
-      <div class="row collapse">
-        <div class="large-10 medium-11 small-12 large-centered small-centered medium-centerted columns intro-wrapper">
-          <h1 class="roboto-thin"> How it works </h1>
-        </div>
+    <div class="large-12 medium-12 small-12 columns intro-wrapper">
+        <h1 class="roboto-thin"> How it works </h1>
+        <section class="step">
+          <h3 class="roboto-thin">Step 1: set up the webhook</h3>
+          <div class="highlight"><pre>http://sourcelove.rs/hooks/github</pre></div>
 
-        <div class="large-10 medium-11 small-12 large-centered small-centered medium-centerted columns">
-          <h3 class="roboto-thin"> Step 1</h3>
-          <h5 class="roboto-thin"> Create a manifest file as follow:</h5>
-          <code>
-            <div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">get</span><span class="p">(</span><span class="s2">&quot;myimage&quot;</span><span class="p">)</span></pre></div>
-          </code>
+          <h5 class="roboto-thin">Using this webhook we will get updates from your repo.</h5>
+        </section>
 
-          <h3 class="roboto-thin"> Step 2:</h3>
-          <h5 class="roboto-thin"> Set up the web hook:</h5>
-          <code>
-            <div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">get</span><span class="p">(</span><span class="s2">&quot;myimage&quot;</span><span class="p">)</span></pre></div>
-          </code>
 
+        <section class="step">
+          <h3 class="roboto-thin"> Step 2: create a manifest with your project info</h3>
+
+          <div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">get</span><span class="p">(</span><span class="s2">&quot;myimage&quot;</span><span class="p">)</span></pre></div>
+
+          <h5 class="roboto-thin"> Create a JSON manifest file and push it into your repo. This file should follow the Source Lovers manifest specification, more details at <a href="http://sourcelove.rs/documentation/manifest">http://sourcelove.rs/documentation/manifest</a></h5>
+        </section>
+
+        <section class="step">
           <h3 class="roboto-thin"> Step 3:</h3>
           <h5 class="roboto-thin last-step"> Push you code and start getting support!</h5>
-
-        </div>
-      </div>
+        </section>
     </div>
   </div>
 </section>
