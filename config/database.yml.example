@@ -1,0 +1,26 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  database: source_lovers_prod
+  username: root
+  password:
+  host: localhost
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  database: source_lovers_dev
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  database: source_lovers_test
+  username: root
+  password:
+  host: localhost
