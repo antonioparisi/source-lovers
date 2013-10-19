@@ -1,3 +1,104 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$bg: #444444;
+$border: #111111;
+$text: white;
+
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background-color: #333333;
+}
+
+header {
+  background-color: #333333;
+}
+
+.roboto-thin {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+nav ul li {
+  font-size: 1.5em;
+  list-style-type: none;
+  color: $text;
+  float: right;
+  padding: 0.5em;
+  padding-left: 0.8em;
+}
+
+section.mainsection {
+  /*box-shadow: inset 10px 10px 10px #000; TODO*/ 
+  z-index: 3;
+}
+
+.intro {
+  font-size: 3em;
+  color: #333333;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.intro-wrapper {
+  padding-top: 4em;
+}
+
+.subintro {
+  font-size: 2em;
+}
+
+section.secondsection {
+  background-color: #333333;
+}
+
+h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
+  color: white;
+}
+
+.mainsection {
+  h1, h5 {
+    color: #333333;
+  }
+}
+
+.last-step {
+  margin-bottom: 4em; 
+}
+
+footer {
+  padding: 1em;
+  text-align: center;
+  color: white;
+  background-color: #333333;
+  border-top: 1px solid #111111;
+}
+
+.img {
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.step {
+  margin-bottom: 2em;
+}
+
+.thirdsection {
+  border-top: 1px solid black;
+  padding-top: 4em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #333333;
+}
+
+.description {
+  font-size: 1.3em;
+}
+
+.image {
+
+}

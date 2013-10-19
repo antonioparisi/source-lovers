@@ -4,4 +4,12 @@ class Project < ActiveRecord::Base
   validates :name, :description, :languages, :author, :presence => true
 
   pg_search_scope :search, :against => [:name, :description, :languages, :author], :using => {:tsearch => {:prefix => true}, :trigram => {}, dmetaphone: {}}
+
+  def donation_packages
+    JSON.parse(data['donation_packages']) if data && data['donation_packages']
+  end
+
+  def paypal_email
+    data['paypal_email'] if data && data['paypal_email']
+  end
 end

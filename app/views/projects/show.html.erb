@@ -1,16 +1,26 @@
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="row collapse">
+  <div class="large-12 medium-12 small-12 columns">
+    <h1><%= @project.name %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <p><%= @project.description %></p>
 
-<p>
-  <strong>Version:</strong>
-  <%= @project.version %>
-</p>
+    <p>
+      <strong>Author:</strong>
+      <%= @project.author %>
+    </p>
 
-<%= link_to 'Back', projects_path %>
+    <p>
+      <strong>Languages:</strong>
+      <%= @project.languages %>
+    </p>
+
+    <% if @project.donation_packages %>
+      <% @project.donation_packages.each do |donation_package| %>
+        <p>
+          <%= donation_package['description'] %>
+        </p>
+        <%= render :partial => 'paypal_button', :locals => { :project => @project, :donation_package => donation_package } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
