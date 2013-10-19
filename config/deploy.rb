@@ -64,7 +64,7 @@ ssh_options[:keys] = ["~/.ssh/rumble_id_rsa"]
 # SCM Options
 set :scm,        :git
 set :repository, "git@github.com:railsrumble/#{GITHUB_REPOSITORY_NAME}.git"
-set :branch,     "feature/cap-deploy"
+set :branch,     "develop"
 
 # Roles
 role :app, LINODE_SERVER_HOSTNAME
