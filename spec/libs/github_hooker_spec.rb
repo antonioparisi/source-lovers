@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe HooksController do
-  describe 'POST /hooks/github' do
-    before(:each) do
+describe GithubHooker do
+  describe '#start' do
+    before do
       @sample_manifest = <<-EOF
 {
 "ref":"refs/heads/master",
@@ -94,17 +94,28 @@ describe HooksController do
 }
 }
       EOF
+      @sample_manifest = JSON.parse(@sample_manifest)
     end
 
-    it "should create a Project" do
-      @json_manifest = JSON.parse(@sample_manifest)
+    it 'should create a sample project' do
+      project_name    = @sample_manifest['repository']['name']
+      repository_path = @sample_manifest['repository']['owner']['name'] + '/' + @sample_manifest['repository']['name']
+      github_hooker = GithubHooker.new(project_name, repository_path)
 
-      project_name = @json_manifest['repository']['name']
-      repository_path = @json_manifest['repository']['owner']['name'] + '/' + @json_manifest['repository']['name']
-      ProjectUpdater.should_receive(:perform_async).with(project_name, repository_path)
-
-      post :github, payload: @sample_manifest
+      expect {
+        github_hooker.start
+      }.to change(Project, :count).by(1)
     end
+
+    it 'should not create a sample project passing a nil repository_path' do
+      project_name    = @sample_manifest['repository']['name']
+
+      github_hooker = GithubHooker.new(project_name, nil)
+
+      expect {
+        github_hooker.start
+      }.to change(Project, :count).by(0)
+    end
+
   end
-
 end

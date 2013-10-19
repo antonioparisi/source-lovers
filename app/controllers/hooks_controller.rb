@@ -5,17 +5,13 @@ class HooksController < ApplicationController
   def github
     github_payload  = JSON.parse(params[:payload])
     project_name    = github_payload['repository']['name']
+
+    raise StandardError.new('Project name is required') if project_name.nil?
     repository_path = github_payload['repository']['owner']['name'] + '/' + github_payload['repository']['name']
-    modified_files  = github_payload['head_commit']['added']
-    GithubHooker.new(project_name, repository_path, modified_files).start
+
+    ProjectUpdater.perform_async(project_name, repository_path)
 
     render json: { success: :true }, status: 200
-  rescue Octokit::NotFound
-    # If MANIFEST not exists, destroy project
-    project = Project.find_by_name(project_name)
-    project.destroy if !project.nil?
-
-    render json: { error: 'MANIFEST not found'}, status: 400
   rescue => error
     render json: { error: error.message }, status: 400
   end
