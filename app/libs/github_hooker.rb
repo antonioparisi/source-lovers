@@ -6,7 +6,7 @@ class GithubHooker
   end
 
   def start
-    manifest = JSON.parse(Base64.decode64(Octokit.contents(@repository_path, :path => 'MANIFEST').attrs[:content]))
+    manifest = JSON.parse(Base64.decode64(Octokit.contents(@repository_path, :path => 'SOURCELOVER').attrs[:content]))
 
     raise StandardError.new('An error is occurred getting MANIFEST') if manifest.nil?
 
