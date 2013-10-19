@@ -49,3 +49,5 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
+
+gem 'zurb-foundation', '~> 4.0.0'
