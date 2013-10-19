@@ -1,0 +1,19 @@
+{
+  "name": "Source Lovers",
+  "description": "Found raising the hacker way",
+  "version": "1.0",
+  "keywords": ["source", "lovers"],
+  "homepage": "http://sourcelove.rs",
+  "packages": [
+    {
+      "name": "Friend",
+      "description": "Help us with hosting stuff.",
+      "amount": "10.00"
+    },
+    {
+      "name": "Lover",
+      "description": "description",
+      "amount": "50.00"
+    }
+  ]
+}

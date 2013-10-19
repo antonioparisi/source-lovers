@@ -60,8 +60,10 @@ h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
   color: white;
 }
 
-.mainsection h1 {
-  color: #333333;
+.mainsection {
+  h1, h5 {
+    color: #333333;
+  }
 }
 
 .last-step {
@@ -83,4 +85,20 @@ footer {
 
 .step {
   margin-bottom: 2em;
+}
+
+.thirdsection {
+  border-top: 1px solid black;
+  padding-top: 4em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #333333;
+}
+
+.description {
+  font-size: 1.3em;
+}
+
+.image {
+
 }
