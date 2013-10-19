@@ -10,6 +10,6 @@ class CreateProjects < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_hstore_index :projects, :data
+    add_index :projects, :data, :using => :gist
   end
 end
