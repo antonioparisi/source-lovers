@@ -20,13 +20,4 @@ class HooksController < ApplicationController
     render json: { error: error.message }, status: 400
   end
 
-  def stripe
-
-  end
-
-  private
-
-  def required_params
-
-  end
 end

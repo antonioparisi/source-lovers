@@ -9,5 +9,4 @@ SourceLovers::Application.routes.draw do
 
   # Webhooks
   post 'hooks/github'
-  post 'hooks/stripe'
 end
