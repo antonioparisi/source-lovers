@@ -124,7 +124,7 @@ $header-font-color: #333;
 // $paragraph-aside-font-style: italic;
 
 // We use these to style <code> tags
-// $code-color: darken($alert-color, 15%);
+$code-color: lighten($body-font-color, 15%);
 // $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
 // $code-font-weight: bold;
 
