@@ -40,7 +40,7 @@ class GithubHooker
   end
 
   def required_manifest_fields(manifest)
-    ['name', 'description', 'version', 'author', 'languages'].each do |field|
+    ['name', 'description', 'author', 'languages'].each do |field|
       if manifest[field].blank?
         return false
       end
@@ -52,7 +52,7 @@ class GithubHooker
   def get_optional_data(manifest)
     optional_data = {}
     ['version', 'homepage', 'repository', 'documentation', 'bug', 'license',
-     'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
+     'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
         case manifest[field]
         when String, Fixnum
