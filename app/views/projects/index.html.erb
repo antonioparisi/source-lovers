@@ -1,7 +1,22 @@
 <div class='container explore-page row'>
   <div class='large-12 small-12 medium-12 columns col main'>
+    <div class="large-12 medium-12 small-12 columns">
+      <div class="row collapse">
+        <div class="large-5 medium-5 small-12 columns">
+          <h1>Show your love for</h1>
+        </div>
+        <%= form_for :foo, :url => projects_path, :method => "GET" do |f| %>
+          <div class="small-10 large-6 medium-6 columns">
+            <%= f.text_field :q, :name => "q", :value => @q, :class => "search-pj", :placeholder => "Redis" %>
+          </div>
+          <div class="small-2 large-1 medium-1 columns">
+            <%= f.submit "❤", :class => "button prefix search-pj" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
     <% if @projects.any? %>
-      <h1>Projects</h1>
       <div class='row collapse'>
         <div class='explore-content'>
           <ol class='repo-leaderboard-list leaderboard-list large-block-grid-3'>

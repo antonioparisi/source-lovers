@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = params[:q].blank? ? Project : Project.search(params[:q])
     @projects = @projects.page((params[:page] || 1).to_i)
+    @q = params[:q]
   end
 
   def show
