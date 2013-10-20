@@ -17,11 +17,11 @@ class GithubHooker
 
       if project = Project.find_by_git_repo(@repository_path)
         project.update_attributes!({:name => manifest['name'], :description => manifest['description'],
-          :author => author, :languages => languages, :git_repo => @repository_path,
+          :author => author, :languages => languages, :git_repo => @repository_path, :keywords => keywords,
           :data => optional_data})
       else
         Project.create!(:name => manifest['name'], :description => manifest['description'],
-          :author => author, :languages => languages, :git_repo => @repository_path,
+          :author => author, :languages => languages, :git_repo => @repository_path, :keywords => keywords,
           :data => optional_data)
       end
     end
@@ -40,7 +40,7 @@ class GithubHooker
   end
 
   def required_manifest_fields(manifest)
-    ['name', 'description', 'version', 'author', 'languages'].each do |field|
+    ['name', 'description', 'author', 'languages'].each do |field|
       if manifest[field].blank?
         return false
       end
@@ -52,9 +52,14 @@ class GithubHooker
   def get_optional_data(manifest)
     optional_data = {}
     ['version', 'homepage', 'repository', 'documentation', 'bug', 'license',
-     'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
+     'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
-        optional_data[field] = manifest[field].to_json
+        case manifest[field]
+        when String, Fixnum
+          optional_data[field] = manifest[field]
+        else
+          optional_data[field] = manifest[field].to_json
+        end
       end
     end
 

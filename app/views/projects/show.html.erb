@@ -1,38 +1,49 @@
-<div class="row collapse">
+<% content_for :title do %>
+  <%= @project.name %>
+<% end %>
+
+<div class="row">
   <div class="large-12 medium-12 small-12 columns">
     <h1><%= @project.name %></h1>
 
-    <p><%= @project.description %></p>
+    <div class="row collapse">
+      <div class="large-7 medium-12 small-12 columns">
+        <p><%= @project.description %></p>
 
-    <p>
-      <strong>Author:</strong>
-      <%= @project.author %>
-    </p>
+        <% if @project.homepage.present? %>
+          <p><%= link_to @project.homepage %></p>
+        <% end %>
+      </div>
 
-    <p>
-      <strong>Languages:</strong>
-      <%= @project.languages %>
-    </p>
-
-    <% if @project.keywords.present? %>
-      <p>
-        <strong>Keywords:</strong>
-        <%= @project.keywords %>
-      </p>
-    <% end %>
+      <div class="large-4 large-offset-1 medium-12 small-12 columns">
+        <p>
+          Author: <%= @project.author %><br/>
+          Languages: <%= @project.languages %><br/>
+          <% if @project.version.present? %>
+            Version: <%= @project.version %><br/>
+          <% end %>
+          <% if @project.license.present? %>
+            License: <%= @project.license %><br/>
+          <% end %>
+          <% if @project.keywords.present? %>
+            Keywords: <%= @project.keywords %><br/>
+          <% end %>
+          <% if @project.documentation.present? %>
+            Documentation: <%= link_to @project.documentation %><br/>
+          <% end %>
+          <% if @project.bug.present? %>
+            Bug: <%= link_to @project.bug %><br/>
+          <% end %>
+        </p>
+      </div>
+    </div>
 
     <% if @project.donation_packages %>
+      <h3>Show your love for <%= @project.name %></h3>
+
       <div class="row collapse">
         <% @project.donation_packages.each do |donation_package| %>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="row collapse">
-              <div class="donation_package large-11 medium-11 small-11 columns centered">
-                <h2><%= number_to_currency(donation_package['amount']) %></h2>
-                <p><%= donation_package['description'] %></p>
-                <%= render :partial => 'paypal_button', :locals => { :project => @project, :donation_package => donation_package } %>
-              </div>
-            </div>
-          </div>
+          <%= render :partial => 'donation_package', :locals => { :project => @project, :donation_package => donation_package } %>
         <% end %>
       </div>
     <% end %>

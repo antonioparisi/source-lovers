@@ -9,7 +9,13 @@ class Project < ActiveRecord::Base
     JSON.parse(data['donation_packages']) if data && data['donation_packages']
   end
 
-  def paypal_email
-    data['paypal_email'] if data && data['paypal_email']
+  ['paypal_email', 'homepage', 'license', 'version', 'documentation', 'bug'].each do |key|
+    define_method(key) { get_hvalue(key) }
+  end
+
+  private
+
+  def get_hvalue(key)
+    data[key] if data && data[key]
   end
 end

@@ -27,3 +27,37 @@ ol {
   margin-top: 50px;
   margin-bottom: 70px;
 }
+
+.donation_package {
+  margin-bottom: 2em;
+  padding: 0.7em;
+  padding-bottom: 0;
+  border-radius: 8px;
+  border: 1px solid #ededed;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+  overflow: hidden;
+  position: relative;
+
+  form input.donate {
+    display: block;
+    width: 122px;
+    margin: 30px auto 0;
+  }
+
+  .amount {
+    position: absolute;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #eb6156;
+    width: 150px;
+    text-align: center;
+    right: -45px;
+    top: 15px;
+    padding: 5px;
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+}

@@ -16,6 +16,8 @@ html, header {
 }
 
 header {
+  /* compete against railsrumble fixed header */
+  margin-top: 36px;
   margin-bottom: 20px;
 }
 
@@ -45,10 +47,7 @@ section.mainsection {
 
 .intro-wrapper {
   padding-top: 4em;
-}
-
-.subintro {
-  font-size: 2em;
+  padding-bottom: 2em;
 }
 
 section.dark {
@@ -57,6 +56,9 @@ section.dark {
   h1, h3, h5, p {
     color: white;
   }
+
+  /* ugly fix to hide a white stripe */
+  margin-bottom: -3em;
 }
 
 .last-step {
@@ -64,6 +66,7 @@ section.dark {
 }
 
 footer {
+  margin-top: 3em;
   padding: 1em;
   text-align: center;
   color: white;
@@ -72,10 +75,7 @@ footer {
 }
 
 .img {
-  margin: 0 auto;
-  z-index: 1;
-  border-radius: 0.5em 0.5em 0em 0em;
-  margin-bottom: -3px;
+  margin-bottom: -1px;
 }
 
 .main_img {
@@ -99,9 +99,15 @@ footer {
 }
 
 .image {
-  width: 55%;
-  margin: 0 auto;
-  display: block;
+  width: 80%;
+  opacity: 0.85;
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    width: 65%;
+    margin-top: 1em;
+  }
 }
 
 .search-pj {
@@ -125,4 +131,8 @@ input[type=submit].search-pj {
 .landing-bg {
   background-image: image_url("landing.png");
   background-size: cover;
+}
+
+.correction {
+  margin-top: 0.7em;
 }

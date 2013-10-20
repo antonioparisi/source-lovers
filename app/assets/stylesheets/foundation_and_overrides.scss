@@ -28,7 +28,7 @@ $body-font-weight: 300;
 // $text-direction: ltr;
 
 // We use these as default colors throughout
-$primary-color: #eb6156;
+$primary-color: rgba(218, 85, 74, 1);
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -124,7 +124,7 @@ $header-font-color: #333;
 // $paragraph-aside-font-style: italic;
 
 // We use these to style <code> tags
-// $code-color: darken($alert-color, 15%);
+$code-color: lighten($body-font-color, 15%);
 // $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
 // $code-font-weight: bold;
 

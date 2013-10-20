@@ -1,0 +1,77 @@
+<% content_for :title do %>
+  Documentation
+<% end %>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns">
+    <h1>Documentation</h1>
+
+    <p>Here you can find details on how to set up your manifest file to have your project listed on Source Lovers.</p>
+
+    <h3>Manifest specification</h3>
+
+    <p>
+      The Source Lovers manifest is a JSON file. It must be named <code>sourcelover.json</code> and be placed on the root
+      of your project's git repository.
+    </p>
+
+    <h5>Format</h5>
+
+    <dl>
+      <dt><span class="code"><code>name</code></span> (required)</dt>
+      <dd>The name of the project</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>description</code></span> (required)</dt>
+      <dd>The project description</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>author</code></span> (required)</dt>
+      <dd>The author of the project. Author is a JSON object with two field: name and email</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>languages</code></span> (required)</dt>
+      <dd>A list of comma separated programming languafes used by the project</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>version</code></span></dt>
+      <dd>The latest stable version of the project</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>homepage</code></span></dt>
+      <dd>The URL of the project's homepage</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>repository</code></span></dt>
+      <dd>The URL of the git repository for the project</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>documentation</code></span></dt>
+      <dd>A link to the project's documentation</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>bug</code></span></dt>
+      <dd>The URL to the project's bug list</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>license</code></span></dt>
+      <dd>The license under which the project is released</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>maintainers</code></span></dt>
+      <dd>An array of people collaborating on the project. Each personr is a JSON object with two field: name and email</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>contributors</code></span></dt>
+      <dd>An array of people occasionally collaborating on the project. Each personr is a JSON object with two field: name and email</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>donation_packages</code></span></dt>
+      <dd>An array of donation packages. Each package is a JSON object made of a name, a description and amount fields</dd>
+    </dl>
+    <dl>
+      <dt><span class="code"><code>paypal_email</code></span></dt>
+      <dd>The email associated to the PayPal account used to raise donations</dd>
+    </dl>
+  </div>
+</div>
