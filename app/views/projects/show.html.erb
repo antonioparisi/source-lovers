@@ -7,7 +7,7 @@
     <h1><%= @project.name %></h1>
 
     <div class="row collapse">
-      <div class="large-8 medium-12 small-12 columns">
+      <div class="large-7 medium-12 small-12 columns">
         <p><%= @project.description %></p>
 
         <% if @project.homepage.present? %>
@@ -15,7 +15,7 @@
         <% end %>
       </div>
 
-      <div class="large-4 medium-12 small-12 columns">
+      <div class="large-4 large-offset-1 medium-12 small-12 columns">
         <p>
           Author: <%= @project.author %><br/>
           Languages: <%= @project.languages %><br/>
