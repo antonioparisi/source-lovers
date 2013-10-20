@@ -1,15 +1,15 @@
 <section class="mainsection first">
-  <div class="row collapse intro-wrapper">
+  <div class="row intro-wrapper">
     <div class="large-12 medium-12 small-12 columns">
-      <h1>We are <strong ><a href="#">Source Lovers</a></strong></h1>
-      <p class="subintro">
+      <h1>We are <strong><a href="#">Source Lovers</a></strong></h1>
+      <h3>
         And we'd like to help you building donation pages for your open source projects.
         <strong>Fund raising the hacker way.</strong>
-      </p>
+      </h3>
     </div>
   </div>
 
-  <div class="row collapse">
+  <div class="row">
     <div class="large-12 small-12 medium-12 columns">
       <%= image_tag 'git.png', :class => "img" %>
     </div>
@@ -18,33 +18,32 @@
 
 
 <section class="mainsection thirdsection">
-  <div class="row collapse">
+  <div class="row">
     <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
-        <div class="large-8 small-8 medium-8 columns description">
-
-        Mantainers of open source projects are often annoyed by bad comments and flames.
-        It's time to change this and make them happy and proud for the hard work they do for all of us.
-        <br >
-        Don't let them to burn out, take the chance to show some love to your favourite open soruce project!
+        <div class="large-8 small-12 medium-8 columns description">
+          Mantainers of open source projects are often annoyed by bad comments and flames.
+          It's time to change this and make them happy and proud for the hard work they do for all of us.
+          <br/>
+          Don't let them to burn out, take the chance to show some love to your favourite open soruce project!
         </div>
-        <div class="large-4 small-4 medium-4 columns image">
+        <div class="large-4 small-12 medium-4 columns image">
           <%= image_tag 'code.svg', :class => "image" %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row collapse search-section">
+  <div class="row search-section">
     <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
-        <div class="large-5 medium-5 small-5 columns">
-          <h1> Show your love for </h1>
+        <div class="large-5 medium-5 small-12 columns">
+          <h1>Show your love for</h1>
         </div>
         <%= form_for :projects, :url => projects_path, :method => "GET" do |f| %>
-          <div class="small-6 large-6 medium-6 columns">
+          <div class="small-10 large-6 medium-6 columns">
             <%= f.text_field :q, :name => "q", :class => "search-pj", :placeholder => "Redis" %>
           </div>
-          <div class="small-1 large-1 medium-1 columns">
+          <div class="small-2 large-1 medium-1 columns">
             <%= f.submit "❤", :class => "button prefix search-pj" %>
           </div>
         <% end %>
@@ -54,7 +53,7 @@
 </section>
 
 <section class="secondsection dark">
-  <div class="row collapse">
+  <div class="row">
     <div class="large-12 medium-12 small-12 columns intro-wrapper">
         <h1> How it works </h1>
         <section class="step">
