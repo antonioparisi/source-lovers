@@ -12,4 +12,8 @@ class Project < ActiveRecord::Base
   def paypal_email
     data['paypal_email'] if data && data['paypal_email']
   end
+
+  def homepage
+    data['homepage'] if data && data['homepage']
+  end
 end

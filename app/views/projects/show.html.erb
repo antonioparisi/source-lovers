@@ -14,6 +14,11 @@
       <%= @project.languages %>
     </p>
 
+    <% if @project.homepage.present? %>
+      <p><%= link_to @project.homepage %></p>
+    <% end %>
+
+
     <% if @project.keywords.present? %>
       <p>
         <strong>Keywords:</strong>
@@ -26,10 +31,12 @@
         <% @project.donation_packages.each do |donation_package| %>
           <div class="large-4 medium-4 small-4 columns">
             <div class="row collapse">
-              <div class="donation_package large-11 medium-11 small-11 columns centered">
-                <h2><%= number_to_currency(donation_package['amount']) %></h2>
-                <p><%= donation_package['description'] %></p>
-                <%= render :partial => 'paypal_button', :locals => { :project => @project, :donation_package => donation_package } %>
+              <div class="large-11 medium-11 small-11 columns centered">
+                <div class="donation_package">
+                  <h2><%= number_to_currency(donation_package['amount']) %></h2>
+                  <p><%= donation_package['description'] %></p>
+                  <%= render :partial => 'paypal_button', :locals => { :project => @project, :donation_package => donation_package } %>
+                </div>
               </div>
             </div>
           </div>
