@@ -17,11 +17,11 @@ class GithubHooker
 
       if project = Project.find_by_git_repo(@repository_path)
         project.update_attributes!({:name => manifest['name'], :description => manifest['description'],
-          :author => author, :languages => languages, :git_repo => @repository_path,
+          :author => author, :languages => languages, :git_repo => @repository_path, :keywords => keywords,
           :data => optional_data})
       else
         Project.create!(:name => manifest['name'], :description => manifest['description'],
-          :author => author, :languages => languages, :git_repo => @repository_path,
+          :author => author, :languages => languages, :git_repo => @repository_path, :keywords => keywords,
           :data => optional_data)
       end
     end
