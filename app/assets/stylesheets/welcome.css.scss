@@ -11,17 +11,8 @@ a {
   text-decoration: none;
 }
 
-html {
+html, header {
   background-color: #333333;
-}
-
-header {
-  background-color: #333333;
-}
-
-.roboto-thin {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
 }
 
 nav ul li {
@@ -37,13 +28,12 @@ nav ul li a {
 }
 
 section.mainsection {
-  /*box-shadow: inset 10px 10px 10px #000; TODO*/ 
+  /*box-shadow: inset 10px 10px 10px #000; TODO*/
   z-index: 3;
 }
 
 .intro {
   font-size: 3em;
-  color: #333333;
   line-height: 1.5em;
   text-transform: uppercase;
 }
@@ -60,7 +50,7 @@ section.secondsection {
   background-color: #333333;
 }
 
-h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
+h1, h3, h5 {
   color: white;
 }
 
@@ -71,7 +61,7 @@ h1.roboto-thin, h3.roboto-thin, h5.roboto-thin {
 }
 
 .last-step {
-  margin-bottom: 4em; 
+  margin-bottom: 4em;
 }
 
 footer {
@@ -99,8 +89,6 @@ footer {
 
 .thirdsection {
   padding-top: 4em;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
   color: #333333;
   background-color: hsl(0%, 0%, 93%);
   padding-bottom: 3em;
@@ -138,5 +126,5 @@ input[type=submit].search-pj {
 
 .first {
   background-image: image_url("landing.png");
-  background-size: cover; 
+  background-size: cover;
 }

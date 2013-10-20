@@ -1,8 +1,8 @@
 <section class="mainsection first">
   <div class="row collapse intro-wrapper">
     <div class="large-12 medium-12 small-12 columns">
-      <h1 class="roboto-thin">We are <strong><a href="#">Source Lovers</a></strong></h1>
-      <p class="subintro roboto-thin">
+      <h1>We are <strong><a href="#">Source Lovers</a></strong></h1>
+      <p class="subintro">
         And we'd like to help you building donation pages for your open source projects.
         <strong>Fund raising the hacker way.</strong>
       </p>
@@ -22,7 +22,7 @@
     <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
         <div class="large-8 small-8 medium-8 columns description">
-        
+
         Mantainers of open source projects are often annoyed by bad comments and flames.
         It's time to change this and make them happy and proud for the hard work they do for all of us.
         <br >
@@ -35,10 +35,10 @@
     </div>
   </div>
   <div class="row collapse search-section">
-    <div class="large-12 medium-12 small-12 columns"> 
+    <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
         <div class="large-5 medium-5 small-5 columns">
-          <h1 class="roboto-thin"> Show your love for </h1>
+          <h1> Show your love for </h1>
         </div>
         <%= form_for :projects, :url => projects_path, :method => "GET" do |f| %>
           <div class="small-6 large-6 medium-6 columns">
@@ -47,7 +47,7 @@
           <div class="small-1 large-1 medium-1 columns">
             <%= f.submit "❤", :class => "button prefix search-pj" %>
           </div>
-        <% end %> 
+        <% end %>
       </div>
     </div>
   </div>
@@ -56,22 +56,22 @@
 <section class="secondsection">
   <div class="row collapse">
     <div class="large-12 medium-12 small-12 columns intro-wrapper">
-        <h1 class="roboto-thin"> How it works </h1>
+        <h1> How it works </h1>
         <section class="step">
-          <h3 class="roboto-thin">Step 1: set up the webhook</h3>
+          <h3>Step 1: set up the webhook</h3>
           <div class="highlight"><pre>http://sourcelovers.r13.railsrumble.com/hooks/github</pre></div>
-          <h5 class="roboto-thin">Using this webhook we will get updates from your repo. You should insert into Settings>Service Hooks> WebHook URLs in your Github repo</h5>
+          <h5>Using this webhook we will get updates from your repo. You should insert into Settings>Service Hooks> WebHook URLs in your Github repo</h5>
         </section>
         <section class="step">
-          <h3 class="roboto-thin"> Step 2: create a manifest with your project info</h3>
+          <h3> Step 2: create a manifest with your project info</h3>
 
           <%= render 'manifest' %>
 
-          <h5 class="roboto-thin"> Create a JSON manifest file and push it into your repo. This file should follow the Source Lovers manifest specification, more details at <a href="http://sourcelove.rs/documentation/manifest">http://sourcelove.rs/documentation/manifest</a></h5>
+          <h5> Create a JSON manifest file and push it into your repo. This file should follow the Source Lovers manifest specification, more details at <a href="http://sourcelove.rs/documentation/manifest">http://sourcelove.rs/documentation/manifest</a></h5>
         </section>
         <section class="step">
-          <h3 class="roboto-thin"> Step 3:</h3>
-          <h5 class="roboto-thin last-step"> Push you code and start getting support!</h5>
+          <h3> Step 3:</h3>
+          <h5 class="last-step"> Push you code and start getting support!</h5>
         </section>
     </div>
   </div>
