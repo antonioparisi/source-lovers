@@ -4,7 +4,14 @@
 
 .donation_package {
   padding: 10px;
-  background-color: #f2f4f9;
+  padding-bottom: 0;
   border-radius: 8px;
   border: 1px solid #ededed;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+
+  form input.donate {
+    display: block;
+    width: 122px;
+    margin: 30px auto 0;
+  }
 }
