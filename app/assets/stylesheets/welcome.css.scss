@@ -101,12 +101,15 @@ footer {
 .image {
   width: 80%;
   opacity: 0.85;
+  float: right;
 }
 
 @media only screen and (max-width: 768px) {
   .image {
-    width: 65%;
-    margin-top: 1em;
+    width: 55%;
+    margin: 1em auto;
+    float: none;
+    display: block;
   }
 }
 
