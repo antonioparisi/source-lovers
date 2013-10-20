@@ -6,7 +6,8 @@ describe ProjectsController do
       'name' => 'Redis',
       'description' => 'Redis is an open source, BSD licensed, advanced key-value store',
       'languages' => 'C',
-      'author' => 'Salvatore antirez Sanfilippo'
+      'author' => 'Salvatore antirez Sanfilippo',
+      'git_repo' => 'antirez/redis'
     }
   }
 
@@ -26,9 +27,9 @@ describe ProjectsController do
       before do
         @redis = create(:project, valid_attributes)
         @sidekiq = create(:project, :name => 'Sidekiq', :description => 'Simple, efficient background processing for Ruby',
-          :languages => 'Ruby', :author => 'Mike mperham Perham')
+          :languages => 'Ruby', :author => 'Mike mperham Perham', :git_repo => 'mperham/sidekiq‎')
         @redis_rb = create(:project, :name => 'redis-rb', :description => 'A Ruby client library for Redis',
-          :languages => 'Ruby', :author => 'Ezra Zygmuntowicz, Taylor Weibley, Matthew Clark, Luca Guidi')
+          :languages => 'Ruby', :author => 'Ezra Zygmuntowicz, Taylor Weibley, Matthew Clark, Luca Guidi', :git_repo => 'antirez/redis')
       end
 
       it 'searches for projects' do

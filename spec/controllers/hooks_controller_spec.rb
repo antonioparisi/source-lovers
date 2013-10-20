@@ -6,19 +6,19 @@ describe HooksController do
       @sample_manifest = <<-EOF
 {
 "ref":"refs/heads/master",
-"after":"206ff4c360c890279bafc16d7e27f0400d12db82",
-"before":"dfc1fc049645e9d4e05b8e926a55e98414408929",
+"after":"a3b7b927a8483a1ae996553fe17fdb490a270f15",
+"before":"206ff4c360c890279bafc16d7e27f0400d12db82",
 "created":false,
 "deleted":false,
 "forced":false,
-"compare":"https://github.com/antonioparisi/SourceLovers-Test/compare/dfc1fc049645...206ff4c360c8",
+"compare":"https://github.com/antonioparisi/SourceLovers-Test/compare/206ff4c360c8...a3b7b927a848",
 "commits":[
 {
-"id":"206ff4c360c890279bafc16d7e27f0400d12db82",
+"id":"a3b7b927a8483a1ae996553fe17fdb490a270f15",
 "distinct":true,
-"message":"Add MANIFEST",
-"timestamp":"2013-10-19T04:32:27-07:00",
-"url":"https://github.com/antonioparisi/SourceLovers-Test/commit/206ff4c360c890279bafc16d7e27f0400d12db82",
+"message":"rename MANIFEST to sourcelover.json",
+"timestamp":"2013-10-20T01:26:38-07:00",
+"url":"https://github.com/antonioparisi/SourceLovers-Test/commit/a3b7b927a8483a1ae996553fe17fdb490a270f15",
 "author":{
 "name":"Antonio Parisi",
 "email":"ant.parisi@gmail.com",
@@ -30,10 +30,11 @@ describe HooksController do
 "username":"antonioparisi"
 },
 "added":[
-"MANIFEST"
+".gitignore",
+"sourcelover.json"
 ],
 "removed":[
-
+"MANIFEST"
 ],
 "modified":[
 
@@ -41,11 +42,11 @@ describe HooksController do
 }
 ],
 "head_commit":{
-"id":"206ff4c360c890279bafc16d7e27f0400d12db82",
+"id":"a3b7b927a8483a1ae996553fe17fdb490a270f15",
 "distinct":true,
-"message":"Add MANIFEST",
-"timestamp":"2013-10-19T04:32:27-07:00",
-"url":"https://github.com/antonioparisi/SourceLovers-Test/commit/206ff4c360c890279bafc16d7e27f0400d12db82",
+"message":"rename MANIFEST to sourcelover.json",
+"timestamp":"2013-10-20T01:26:38-07:00",
+"url":"https://github.com/antonioparisi/SourceLovers-Test/commit/a3b7b927a8483a1ae996553fe17fdb490a270f15",
 "author":{
 "name":"Antonio Parisi",
 "email":"ant.parisi@gmail.com",
@@ -57,10 +58,11 @@ describe HooksController do
 "username":"antonioparisi"
 },
 "added":[
-"MANIFEST"
+".gitignore",
+"sourcelover.json"
 ],
 "removed":[
-
+"MANIFEST"
 ],
 "modified":[
 
@@ -86,11 +88,12 @@ describe HooksController do
 "has_downloads":true,
 "has_wiki":true,
 "created_at":1382175791,
-"pushed_at":1382182349,
+"pushed_at":1382257602,
 "master_branch":"master"
 },
 "pusher":{
-"name":"none"
+"name":"antonioparisi",
+"email":"ant.parisi@gmail.com"
 }
 }
       EOF

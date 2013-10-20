@@ -7,25 +7,27 @@ class GithubHooker
 
   def start
     manifest = JSON.parse(Base64.decode64(Octokit.contents(@repository_path, :path => 'sourcelover.json').attrs[:content]))
-
     raise StandardError.new('An error is occurred getting MANIFEST') if manifest.nil?
 
     if validate(manifest)
       optional_data = get_optional_data(manifest)
-      author        = process_field(manifest['author'], 'author')
-      languages     = process_field(manifest['languages'], 'languages')
+      author = process_field(manifest['author'], 'author')
+      languages = process_field(manifest['languages'], 'languages')
+      keywords = process_field(manifest['keywords'], 'keywords')
 
-      if project = Project.find_by_name(manifest['name'])
+      if project = Project.find_by_git_repo(@repository_path)
         project.update_attributes!({:name => manifest['name'], :description => manifest['description'],
-                                   :author => author, :languages => languages, :data => optional_data})
+          :author => author, :languages => languages, :git_repo => @repository_path,
+          :data => optional_data})
       else
         Project.create!(:name => manifest['name'], :description => manifest['description'],
-                        :author => author, :languages => languages, :data => optional_data)
+          :author => author, :languages => languages, :git_repo => @repository_path,
+          :data => optional_data)
       end
     end
   rescue Octokit::NotFound
     # If MANIFEST not exists, destroy project
-    project = Project.find_by_name(@project_name)
+    project = Project.find_by_git_repo(@repository_path)
     project.destroy if !project.nil?
   end
 
@@ -49,10 +51,10 @@ class GithubHooker
 
   def get_optional_data(manifest)
     optional_data = {}
-    ['version', 'keywords', 'homepage', 'repository', 'documentation', 'bug', 'license',
-     'author', 'maintainers', 'contributors', 'donation_packages'].each do |field|
+    ['version', 'homepage', 'repository', 'documentation', 'bug', 'license',
+     'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
-        optional_data[field] = manifest[field]
+        optional_data[field] = manifest[field].to_json
       end
     end
 
@@ -69,7 +71,7 @@ class GithubHooker
         r = email if name.blank? && !email.blank?
         r = name if !name.blank? && email.blank?
         r
-      when 'languages'
+      when 'languages', 'keywords'
         # Eg. ["ruby", "objective-c"]
         field.join(', ')
     end

@@ -25,12 +25,15 @@ header {
 }
 
 nav ul li {
-  font-size: 1.5em;
+  font-size: 1.2em;
   list-style-type: none;
-  color: $text;
   float: right;
+  color: $text;
   padding: 0.5em;
   padding-left: 0.8em;
+}
+nav ul li a {
+  color: $text !important;
 }
 
 section.mainsection {
@@ -134,6 +137,6 @@ input[type=submit].search-pj {
 }
 
 .first {
-  background-image: url("landing.png");
+  background-image: image_url("landing.png");
   background-size: cover; 
 }
