@@ -17,6 +17,7 @@ gem 'octokit', '~> 2.0'
 gem 'sidekiq'
 gem 'pg_search'
 gem 'kaminari'
+gem 'high_voltage'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
