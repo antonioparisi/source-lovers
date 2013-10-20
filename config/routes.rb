@@ -1,5 +1,7 @@
 SourceLovers::Application.routes.draw do
-  resources :projects, :only => [:index, :show]
+  resources :projects, :only => [:index] do
+    match ':author/:project_name', :to => 'projects#show', :as => 'show', :on => :collection, :via => :get
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
