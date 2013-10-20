@@ -42,7 +42,7 @@
         </div>
         <%= form_for :projects, :url => projects_path, :method => "GET" do |f| %>
           <div class="small-6 large-6 medium-6 columns">
-            <%= f.text_field :q, :class => "search-pj", :placeholder => "Redis" %>
+            <%= f.text_field :q, :name => "q", :class => "search-pj", :placeholder => "Redis" %>
           </div>
           <div class="small-1 large-1 medium-1 columns">
             <%= f.submit "❤", :class => "button prefix search-pj" %>
