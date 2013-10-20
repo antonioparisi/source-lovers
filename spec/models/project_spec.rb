@@ -90,4 +90,19 @@ describe Project do
       end
     end
   end
+
+  ['paypal_email', 'homepage', 'license', 'version', 'documentation', 'bug'].each do |key|
+    describe "##{key}" do
+      before do
+        @project = create(:project,
+          :git_repo => 'antonioparisi/SourceLovers-Test',
+          :data => { key => key }
+        )
+      end
+
+      subject { @project.send(key) }
+
+      it { should eq(key) }
+    end
+  end
 end
