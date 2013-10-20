@@ -61,6 +61,9 @@ section.dark {
   h1, h3, h5, p {
     color: white;
   }
+
+  /* ugly fix to hide a white stripe */
+  margin-bottom: -40px;
 }
 
 .last-step {

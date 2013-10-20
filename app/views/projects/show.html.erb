@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  <%= @project.name %>
+<% end %>
+
 <div class="row collapse">
   <div class="large-12 medium-12 small-12 columns">
     <h1><%= @project.name %></h1>
@@ -37,17 +41,7 @@
 
       <div class="row collapse">
         <% @project.donation_packages.each do |donation_package| %>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="row collapse">
-              <div class="large-11 medium-11 small-11 columns centered">
-                <div class="donation_package">
-                  <h2><%= number_to_currency(donation_package['amount']) %></h2>
-                  <p><%= donation_package['description'] %></p>
-                  <%= render :partial => 'paypal_button', :locals => { :project => @project, :donation_package => donation_package } %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render :partial => 'donation_package', :locals => { :project => @project, :donation_package => donation_package } %>
         <% end %>
       </div>
     <% end %>
