@@ -1,0 +1,52 @@
+<div class='container explore-page row'>
+  <div class='large-12 small-12 medium-12 columns col main'>
+      <div class="row collapse">
+        <div class="large-5 medium-5 small-12 columns">
+          <h1>Show your love for</h1>
+        </div>
+        <%= form_for :foo, :url => projects_path, :method => "GET" do |f| %>
+          <div class="small-10 large-6 medium-6 columns">
+            <%= f.text_field :q, :name => "q", :value => @q, :class => "search-pj", :placeholder => "Redis" %>
+          </div>
+          <div class="small-2 large-1 medium-1 columns">
+            <%= f.submit "❤", :class => "button prefix search-pj" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+    <% if @projects.any? %>
+      <div class='row collapse'>
+        <div class='explore-content'>
+          <ol class='repo-leaderboard-list leaderboard-list large-block-grid-3'>
+            <% @projects.each do |project| %>
+              <li class='repo-leaderboard-list-item leaderboard-list-item'>
+                <div class='large-12 small-12 medium-12 columns project-block'>
+                  <h2 class='repo-leaderboard-title'>
+                    <%= link_to project.name.capitalize,
+                                show_projects_path(:author => project.git_repo.split('/')[0],
+                                                   :project_name => project.git_repo.split('/')[1]) %>
+                  </h2>
+                  <p>
+                    <%= project.description %>
+                  </p>
+                  <span class='right'>
+                    Built with ❤ by <span class="avatar"><%= image_tag avatar_tag(project.author) %></span>
+                    <%= link_to author_without_email(project.author), projects_path(:q => project.author) %>
+                  </span>
+                </div>
+              </li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+
+      <%= paginate @projects %>
+    <% else %>
+      <div class='large-12 small-12 medium-12 columns'>
+        <h3 class='repo-leaderboard-title no-projects'>
+          No projects found, view a list of all <%= link_to 'projects', projects_path %>
+        </h3>
+      </div>
+    <% end %>
+  </div>
+</div>

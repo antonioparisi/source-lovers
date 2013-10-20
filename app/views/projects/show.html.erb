@@ -1,0 +1,51 @@
+<% content_for :title do %>
+  <%= @project.name %>
+<% end %>
+
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns">
+    <h1><%= @project.name %></h1>
+
+    <div class="row collapse">
+      <div class="large-7 medium-12 small-12 columns">
+        <p><%= @project.description %></p>
+
+        <% if @project.homepage.present? %>
+          <p><%= link_to @project.homepage, @project.homepage %></p>
+        <% end %>
+      </div>
+
+      <div class="large-4 large-offset-1 medium-12 small-12 columns">
+        <p>
+          Author: <span class="avatar"><%= image_tag avatar_tag(@project.author) %></span> <%= link_to author_without_email(@project.author), projects_path(:q => @project.author) %><br/>
+          Languages: <%= @project.languages %><br/>
+          <% if @project.version.present? %>
+            Version: <%= @project.version %><br/>
+          <% end %>
+          <% if @project.license.present? %>
+            License: <%= @project.license %><br/>
+          <% end %>
+          <% if @project.keywords.present? %>
+            Keywords: <%= @project.keywords %><br/>
+          <% end %>
+          <% if @project.documentation.present? %>
+            Documentation: <%= link_to @project.documentation %><br/>
+          <% end %>
+          <% if @project.bug.present? %>
+            Bug: <%= link_to @project.bug %><br/>
+          <% end %>
+        </p>
+      </div>
+    </div>
+
+    <% if @project.donation_packages %>
+      <h3>Show your love for <%= @project.name %></h3>
+
+      <div class="row collapse">
+        <% @project.donation_packages.each do |donation_package| %>
+          <%= render :partial => 'donation_package', :locals => { :project => @project, :donation_package => donation_package } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="large-4 medium-6 small-12 columns">
+  <div class="row collapse">
+    <div class="large-11 medium-11 small-12 columns centered">
+      <div class="donation_package">
+        <h2><%= donation_package['name'] %></h2>
+        <div class="amount"><%= number_to_currency(donation_package['amount']) %></div>
+        <p><%= donation_package['description'] %></p>
+        <%= render :partial => 'paypal_button', :locals => { :project => project, :donation_package => donation_package } %>
+      </div>
+    </div>
+  </div>
+</div>

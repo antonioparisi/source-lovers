@@ -1,0 +1,150 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$bg: #444444;
+$border: #111111;
+$text: white;
+$grey: #CCCCCC;
+$dark: #6F6F6F;
+
+a {
+  text-decoration: none;
+}
+
+html, header {
+  background-color: #333333;
+}
+
+header {
+  /* compete against railsrumble fixed header */
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+
+nav ul { margin: 0; }
+nav ul li {
+  font-size: 1.2em;
+  list-style-type: none;
+  float: right;
+  color: $text;
+  padding: 0.5em;
+  padding-left: 0.8em;
+}
+nav ul li a {
+  color: $text !important;
+}
+
+section.mainsection {
+  /*box-shadow: inset 10px 10px 10px #000; TODO*/
+  z-index: 3;
+}
+
+.intro {
+  font-size: 3em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.intro-wrapper {
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+
+section.dark {
+  background-color: #333333;
+
+  h1, h3, h5, p {
+    color: white;
+  }
+
+  /* ugly fix to hide a white stripe */
+  margin-bottom: -3em;
+}
+
+.last-step {
+  margin-bottom: 4em;
+}
+
+footer {
+  margin-top: 3em;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  background-color: hsl(70, 8%, 15%);
+  border-top: 1px solid hsl(0, 0%, 40%);
+  font-size: 12px;
+}
+
+.img {
+  margin-bottom: -1px;
+}
+
+.main_img {
+  border-radius: 5px;
+}
+
+.step {
+  margin-bottom: 2em;
+}
+
+.thirdsection {
+  padding-top: 4em;
+  background-color: hsl(0%, 0%, 93%);
+  padding-bottom: 3em;
+}
+
+.description {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding-top: 0.2em;
+}
+
+.image {
+  width: 80%;
+  opacity: 0.85;
+  float: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    width: 55%;
+    margin: 1em auto;
+    float: none;
+    display: block;
+  }
+}
+
+.search-pj {
+  margin-top: 1.7em !important;
+  height: 3em !important;
+}
+
+input.search-pj {
+  border-radius: 0.5em 0em 0em 0.5em;
+}
+
+input[type=submit].search-pj {
+  border-radius: 0em 0.5em 0.5em 0em;
+  box-shadow: none;
+}
+
+.search-section {
+  margin-top: 3em;
+}
+
+.landing-bg {
+  background-image: image_url("landing.png");
+  background-size: cover;
+}
+
+.correction {
+  margin-top: 0.7em;
+}
+
+ul.team-list {
+  display: inline;
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
