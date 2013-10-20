@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = params[:q] ? Project.search(params[:q]) : Project
+    @projects = params[:q].blank? ? Project : Project.search(params[:q])
     @projects = @projects.page((params[:page] || 1).to_i)
   end
 
