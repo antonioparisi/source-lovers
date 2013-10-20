@@ -25,9 +25,7 @@
     <%= yield :header %>
     <%= yield %>
 
-    <footer>
-      <a href="http://hackatron.org">Hackatron</a>
-    </footer>
+    <%= render :partial => 'shared/footer' %>
 
     <%= javascript_include_tag "application" %>
   </body>
