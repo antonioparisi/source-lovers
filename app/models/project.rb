@@ -16,4 +16,8 @@ class Project < ActiveRecord::Base
   def homepage
     data['homepage'] if data && data['homepage']
   end
+
+  def license
+    data['license'] if data && data['license']
+  end
 end

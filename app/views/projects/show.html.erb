@@ -18,11 +18,17 @@
       <p><%= link_to @project.homepage %></p>
     <% end %>
 
-
     <% if @project.keywords.present? %>
       <p>
         <strong>Keywords:</strong>
         <%= @project.keywords %>
+      </p>
+    <% end %>
+
+    <% if @project.license.present? %>
+      <p>
+        <strong>License:</strong>
+        <%= @project.license %>
       </p>
     <% end %>
 
