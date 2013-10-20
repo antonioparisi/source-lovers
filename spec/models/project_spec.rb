@@ -9,7 +9,8 @@ describe Project do
 
   describe '.search' do
     before do
-      @cool = create(:project, :name => 'cool', :description => 'a cool project', :languages => 'ruby', :author => 'good fellow', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @cool = create(:project, :name => 'cool', :description => 'a cool project', :languages => 'ruby', :author => 'good fellow', :git_repo => 'antonioparisi/SourceLovers-Test',
+        :keywords => 'hackatron, coffee')
       @oldish = create(:project, :name => 'oldish camel', :description => 'just an regexp project', :languages => 'perl', :author => 'anonymous@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
       @old_and_good = create(:project, :name =>'old and good', :description => 'only for real men', :languages => 'C', :author => 'hacker@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
       @parallel = create(:project, :name => 'parallel', :description => 'we love concurrency and parallel things for good!', :languages => 'erlang', :author => 'master@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
@@ -18,7 +19,7 @@ describe Project do
       @four = create(:project, :name => 'four', :git_repo => 'antonioparisi/SourceLovers-Test')
       @far = create(:project, :name => 'far', :git_repo => 'antonioparisi/SourceLovers-Test')
       @fur = create(:project, :description => 'fur', :git_repo => 'antonioparisi/SourceLovers-Test')
-      @five = create(:project, :name => 'five', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @five = create(:project, :name => 'five', :git_repo => 'antonioparisi/SourceLovers-Test', :keywords => 'bar, foo, hackatron')
     end
 
     context 'when searching for old' do
@@ -55,7 +56,7 @@ describe Project do
 
     context 'when searching for Yahoo' do
       it 'finds two projects' do
-        Project.search('Yahoo').count == 2
+        Project.search('Yahoo').count.should == 2
       end
 
       it 'finds Yahoo and Yohoo' do
@@ -67,13 +68,25 @@ describe Project do
 
     context 'when searching for fir' do
       it 'finds three projects' do
-        Project.search('fir').count == 3
+        Project.search('fir').count.should == 5
       end
 
-      it 'finds four, far, fur' do
-       [@four, @far, @fur].each do |proj|
+      it 'finds four, far, fur, old_and_good and parallel' do
+       [@four, @far, @fur, @old_and_good, @parallel].each do |proj|
          Project.search('fir').should include(proj)
        end
+      end
+    end
+
+    context 'when searching for hackatron' do
+      it 'finds two projects' do
+        Project.search('hackatron').count.should == 2
+      end
+
+      it 'finds five and cool' do
+        [@cool, @five].each do |proj|
+          Project.search('hackatron').should include(proj)
+        end
       end
     end
   end

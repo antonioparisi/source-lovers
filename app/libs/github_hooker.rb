@@ -11,17 +11,18 @@ class GithubHooker
 
     if validate(manifest)
       optional_data = get_optional_data(manifest)
-      author        = process_field(manifest['author'], 'author')
-      languages     = process_field(manifest['languages'], 'languages')
+      author = process_field(manifest['author'], 'author')
+      languages = process_field(manifest['languages'], 'languages')
+      keywords = process_field(manifest['keywords'], 'keywords')
 
       if project = Project.find_by_git_repo(@repository_path)
         project.update_attributes!({:name => manifest['name'], :description => manifest['description'],
-                                   :author => author, :languages => languages, :git_repo => @repository_path,
-                                   :data => optional_data})
+          :author => author, :languages => languages, :git_repo => @repository_path,
+          :data => optional_data})
       else
         Project.create!(:name => manifest['name'], :description => manifest['description'],
-                        :author => author, :languages => languages, :git_repo => @repository_path,
-                        :data => optional_data)
+          :author => author, :languages => languages, :git_repo => @repository_path,
+          :data => optional_data)
       end
     end
   rescue Octokit::NotFound
@@ -50,7 +51,7 @@ class GithubHooker
 
   def get_optional_data(manifest)
     optional_data = {}
-    ['version', 'keywords', 'homepage', 'repository', 'documentation', 'bug', 'license',
+    ['version', 'homepage', 'repository', 'documentation', 'bug', 'license',
      'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
         optional_data[field] = manifest[field].to_json
@@ -70,7 +71,7 @@ class GithubHooker
         r = email if name.blank? && !email.blank?
         r = name if !name.blank? && email.blank?
         r
-      when 'languages'
+      when 'languages', 'keywords'
         # Eg. ["ruby", "objective-c"]
         field.join(', ')
     end
