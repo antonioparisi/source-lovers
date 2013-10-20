@@ -7,7 +7,6 @@ class GithubHooker
 
   def start
     manifest = JSON.parse(Base64.decode64(Octokit.contents(@repository_path, :path => 'sourcelover.json').attrs[:content]))
-
     raise StandardError.new('An error is occurred getting MANIFEST') if manifest.nil?
 
     if validate(manifest)
@@ -52,7 +51,7 @@ class GithubHooker
     ['version', 'keywords', 'homepage', 'repository', 'documentation', 'bug', 'license',
      'author', 'maintainers', 'contributors', 'donation_packages'].each do |field|
       if !manifest[field].blank?
-        optional_data[field] = manifest[field]
+        optional_data[field] = manifest[field].to_json
       end
     end
 
