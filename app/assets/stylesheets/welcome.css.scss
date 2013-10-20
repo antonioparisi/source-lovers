@@ -15,6 +15,7 @@ html, header {
   background-color: #333333;
 }
 
+nav ul { margin: 0; }
 nav ul li {
   font-size: 1.2em;
   list-style-type: none;
@@ -46,17 +47,11 @@ section.mainsection {
   font-size: 2em;
 }
 
-section.secondsection {
+section.dark {
   background-color: #333333;
-}
 
-h1, h3, h5 {
-  color: white;
-}
-
-.mainsection {
-  h1, h5, h3 {
-    color: #333333;
+  h1, h3, h5, p {
+    color: white;
   }
 }
 
@@ -89,7 +84,6 @@ footer {
 
 .thirdsection {
   padding-top: 4em;
-  color: #333333;
   background-color: hsl(0%, 0%, 93%);
   padding-bottom: 3em;
 }
