@@ -14,5 +14,7 @@
  */
 
 h1.logo {
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2em;
 }
