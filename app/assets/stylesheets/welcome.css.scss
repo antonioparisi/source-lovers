@@ -35,6 +35,10 @@ nav ul li a {
 section.mainsection {
   /*box-shadow: inset 10px 10px 10px #000; TODO*/
   z-index: 3;
+
+  h1 strong {
+    text-shadow: rgba(255, 255, 255, .3) 0px 0px 10px;
+  }
 }
 
 .intro {
