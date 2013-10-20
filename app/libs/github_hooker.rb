@@ -15,17 +15,19 @@ class GithubHooker
       author        = process_field(manifest['author'], 'author')
       languages     = process_field(manifest['languages'], 'languages')
 
-      if project = Project.find_by_name(manifest['name'])
+      if project = Project.find_by_git_repo(@repository_path)
         project.update_attributes!({:name => manifest['name'], :description => manifest['description'],
-                                   :author => author, :languages => languages, :data => optional_data})
+                                   :author => author, :languages => languages, :git_repo => @repository_path,
+                                   :data => optional_data})
       else
         Project.create!(:name => manifest['name'], :description => manifest['description'],
-                        :author => author, :languages => languages, :data => optional_data)
+                        :author => author, :languages => languages, :git_repo => @repository_path,
+                        :data => optional_data)
       end
     end
   rescue Octokit::NotFound
     # If MANIFEST not exists, destroy project
-    project = Project.find_by_name(@project_name)
+    project = Project.find_by_git_repo(@repository_path)
     project.destroy if !project.nil?
   end
 

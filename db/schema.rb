@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019154739) do
+ActiveRecord::Schema.define(version: 20131020083525) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131019154739) do
     t.hstore   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "git_repo"
   end
 
   add_index "projects", ["data"], name: "index_projects_on_data", using: :gist

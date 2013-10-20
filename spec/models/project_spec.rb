@@ -9,16 +9,16 @@ describe Project do
 
   describe '.search' do
     before do
-      @cool = create(:project, :name => 'cool', :description => 'a cool project', :languages => 'ruby', :author => 'good fellow')
-      @oldish = create(:project, :name => 'oldish camel', :description => 'just an regexp project', :languages => 'perl', :author => 'anonymous@example.com')
-      @old_and_good = create(:project, :name =>'old and good', :description => 'only for real men', :languages => 'C', :author => 'hacker@example.com')
-      @parallel = create(:project, :name => 'parallel', :description => 'we love concurrency and parallel things for good!', :languages => 'erlang', :author => 'master@example.com')
-      @yahoo = create(:project, :name => 'Yahoo!')
-      @yohoo = create(:project, :description => 'Yohoo!')
-      @four = create(:project, :name => 'four')
-      @far = create(:project, :name => 'far')
-      @fur = create(:project, :description => 'fur')
-      @five = create(:project, :name => 'five')
+      @cool = create(:project, :name => 'cool', :description => 'a cool project', :languages => 'ruby', :author => 'good fellow', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @oldish = create(:project, :name => 'oldish camel', :description => 'just an regexp project', :languages => 'perl', :author => 'anonymous@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @old_and_good = create(:project, :name =>'old and good', :description => 'only for real men', :languages => 'C', :author => 'hacker@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @parallel = create(:project, :name => 'parallel', :description => 'we love concurrency and parallel things for good!', :languages => 'erlang', :author => 'master@example.com', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @yahoo = create(:project, :name => 'Yahoo!', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @yohoo = create(:project, :description => 'Yohoo!', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @four = create(:project, :name => 'four', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @far = create(:project, :name => 'far', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @fur = create(:project, :description => 'fur', :git_repo => 'antonioparisi/SourceLovers-Test')
+      @five = create(:project, :name => 'five', :git_repo => 'antonioparisi/SourceLovers-Test')
     end
 
     context 'when searching for old' do
