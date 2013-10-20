@@ -1,6 +1,5 @@
 SourceLovers::Application.routes.draw do
   resources :projects, :only => [:index] do
-    match ':author', :to => 'projects#projects_author', :as => 'author', :on => :collection, :via => :get
     match ':author/:project_name', :to => 'projects#show', :as => 'show', :on => :collection, :via => :get
   end
 
