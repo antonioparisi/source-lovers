@@ -1,4 +1,4 @@
-<div class='container explore-page row collapse'>
+<div class='container explore-page row'>
   <div class='large-12 small-12 medium-12 columns col main'>
     <div class="large-12 medium-12 small-12 columns">
       <div class="row collapse">
@@ -32,8 +32,8 @@
                     <%= project.description %>
                   </p>
                   <span class='right'>
-                    Built with ❤ by <%= link_to project.author, show_projects_path(:author => project.git_repo.split('/')[0], :project_name => project.git_repo.split('/')[1]) %>
-                    <%= image_tag avatar_tag(project.author) %>
+                    Built with ❤ by <span class="avatar"><%= image_tag avatar_tag(project.author) %></span>
+                    <%= link_to author_without_email(project.author), projects_path(:q => project.author) %>
                   </span>
                 </div>
               </li>
