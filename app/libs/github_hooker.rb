@@ -52,7 +52,7 @@ class GithubHooker
   def get_optional_data(manifest)
     optional_data = {}
     ['version', 'keywords', 'homepage', 'repository', 'documentation', 'bug', 'license',
-     'author', 'maintainers', 'contributors', 'donation_packages'].each do |field|
+     'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
         optional_data[field] = manifest[field]
       end
