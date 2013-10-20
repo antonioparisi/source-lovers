@@ -54,7 +54,12 @@ class GithubHooker
     ['version', 'homepage', 'repository', 'documentation', 'bug', 'license',
      'author', 'maintainers', 'contributors', 'donation_packages', 'paypal_email'].each do |field|
       if !manifest[field].blank?
-        optional_data[field] = manifest[field].to_json
+        case manifest[field]
+        when String, Fixnum
+          optional_data[field] = manifest[field]
+        else
+          optional_data[field] = manifest[field].to_json
+        end
       end
     end
 
