@@ -1,25 +1,39 @@
-<h1>Listing projects</h1>
+<div class='container explore-page row collapse'>
+  <div class='large-12 small-12 medium-12 columns col main'>
+    <% if @projects.any? %>
+      <h1>Projects</h1>
+      <div class='row collapse'>
+        <div class='explore-content'>
+          <ol class='repo-leaderboard-list leaderboard-list large-block-grid-3'>
+            <% @projects.each do |project| %>
+              <li class='repo-leaderboard-list-item leaderboard-list-item'>
+                <div class='large-12 small-12 medium-12 columns project-block'>
+                  <h2 class='repo-leaderboard-title'>
+                    <%= link_to project.name.capitalize,
+                                show_projects_path(:author => project.git_repo.split('/')[0],
+                                                   :project_name => project.git_repo.split('/')[1]) %>
+                  </h2>
+                  <p>
+                    <%= project.description %>
+                  </p>
+                  <span class='right'>
+                    Built with ❤ by <%= link_to project.author, show_projects_path(:author => project.git_repo.split('/')[0], :project_name => project.git_repo.split('/')[1]) %>
+                    <%= image_tag avatar_tag(project.author) %>
+                  </span>
+                </div>
+              </li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th>Languages</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.author %></td>
-        <td><%= project.languages %></td>
-        <td><%= link_to 'Show', project %></td>
-      </tr>
+      <%= paginate @projects %>
+    <% else %>
+      <div class='large-12 small-12 medium-12 columns'>
+        <h3 class='repo-leaderboard-title no-projects'>
+          No projects found, view a list of all <%= link_to 'projects', projects_path %>
+        </h3>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
